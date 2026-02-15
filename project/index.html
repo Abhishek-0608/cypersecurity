@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberSafe — Cyber Security Awareness</title>
+  <link rel="stylesheet" href="cypersecurity.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">CS</div>
+        <div>
+          <div class="brand-title">CyberSafe</div>
+          <div class="brand-sub">Cyber Security Awareness</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero" aria-label="Home section">
+      <div class="hero-left">
+        <h1>Stay safe online. Learn, protect, and respond.</h1>
+        <p class="lead">CyberSafe is a practical awareness hub for individuals and small organizations to learn essential cyber hygiene, spot threats, and respond to incidents. Simple guides, interactive checks, and community resources.</p>
+        <div class="cta-row">
+          <button class="btn pulse" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Get Started</button>
+          <button class="btn secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Features</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="banner" role="img" aria-label="Banner showing cyber security concept">
+          <div class="overlay">
+            <h2>Cyber Safety Starts With Awareness</h2>
+            <p>Learn to recognize phishing, secure your accounts, and protect your privacy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-label="About section">
+      <h2 class="section-title">About CyberSafe</h2>
+      <div class="about-grid">
+        <div>
+          <p class="lead"><strong>What this website is</strong> CyberSafe is an educational single-page site focused on cyber security awareness for everyday users and small teams. It provides clear guidance, practical features, and quick checks to reduce risk.</p>
+          <p><strong>Who it's for</strong> Students, employees, small business owners, and anyone who uses the internet and wants to improve their digital safety.</p>
+          <p><strong>Why it matters</strong> Most breaches begin with human error — awareness and simple habits dramatically reduce exposure to phishing, credential theft, and privacy leaks.</p>
+        </div>
+        <div>
+          <div class="quick-tips">
+            <h3>Quick tips</h3>
+            <ul>
+              <li>Use strong, unique passwords</li>
+              <li>Enable two-factor authentication</li>
+              <li>Verify links before clicking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-label="Services section">
+      <h2 class="section-title">Services & Features</h2>
+      <p class="lead">Core features designed to build awareness and practical protection.</p>
+      <div class="cards" role="list">
+        <div class="card" role="listitem">
+          <h3>Interactive Phishing Simulator</h3>
+          <p>Practice identifying phishing emails in a safe environment and get instant feedback to improve detection skills.</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Account Hardening Guides</h3>
+          <p>Step-by-step checklists for securing email, social accounts, and devices with recommended settings and 2FA setup.</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Incident Response Checklist</h3>
+          <p>Clear, actionable steps to follow if you suspect compromise: isolate, change passwords, report, and recover.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="login" aria-label="Login section">
+      <h2 class="section-title">Login</h2>
+      <p class="lead">Access your CyberSafe dashboard.</p>
+      <form id="loginForm" class="form-grid" onsubmit="return validateLogin(event)">
+        <div>
+          <label for="login-username">Username</label>
+          <input id="login-username" type="text" name="username" placeholder="Enter username" />
+        </div>
+        <div>
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" name="password" placeholder="Enter password" />
+          <div class="hint">Minimum 6 characters</div>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Login</button>
+          <button class="btn secondary" type="button" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Create account</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="register" aria-label="Register section">
+      <h2 class="section-title">Register / Signup</h2>
+      <p class="lead">Create an account to track your progress and access simulations.</p>
+      <form id="registerForm" class="form-grid" onsubmit="return validateRegister(event)">
+        <div>
+          <label for="reg-name">Name</label>
+          <input id="reg-name" type="text" name="name" placeholder="Full name" />
+        </div>
+        <div>
+          <label for="reg-email">Email</label>
+          <input id="reg-email" type="email" name="email" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="reg-password">Password</label>
+          <input id="reg-password" type="password" name="password" placeholder="Create password" />
+          <div class="hint">Minimum 8 characters recommended</div>
+        </div>
+        <div>
+          <label for="reg-confirm">Confirm Password</label>
+          <input id="reg-confirm" type="password" name="confirm" placeholder="Repeat password" />
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Register</button>
+          <button class="btn secondary" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="feedback" aria-label="Feedback section">
+      <h2 class="section-title">Feedback / Contact</h2>
+      <p class="lead">Share suggestions or report issues — your input helps improve awareness resources.</p>
+      <form id="feedbackForm" class="form-grid" onsubmit="return validateFeedback(event)">
+        <div>
+          <label for="fb-name">Name</label>
+          <input id="fb-name" type="text" name="name" placeholder="Your name" />
+        </div>
+        <div>
+          <label for="fb-email">Email</label>
+          <input id="fb-email" type="email" name="email" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="fb-message">Message</label>
+          <textarea id="fb-message" name="message" placeholder="How can we improve?"></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Send Feedback</button>
+          <button class="btn secondary" type="reset">Clear</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="copyright">© <span id="year"></span> CyberSafe</div>
+      <div class="muted">Cyber Security Awareness — CyberSafe</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function showAlert(message){
+      alert(message);
+    }
+
+    function validateLogin(e){
+      e.preventDefault();
+      const user = document.getElementById('login-username').value.trim();
+      const pass = document.getElementById('login-password').value;
+      if(!user || !pass){
+        showAlert('Please fill in both username and password.');
+        return false;
+      }
+      if(pass.length < 6){
+        showAlert('Password must be at least 6 characters.');
+        return false;
+      }
+      showAlert('Login successful (demo). Welcome, ' + user + '!');
+      e.target.reset();
+      return false;
+    }
+
+    function validateRegister(e){
+      e.preventDefault();
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const pass = document.getElementById('reg-password').value;
+      const conf = document.getElementById('reg-confirm').value;
+      if(!name || !email || !pass || !conf){
+        showAlert('Please complete all fields.');
+        return false;
+      }
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRe.test(email)){
+        showAlert('Please enter a valid email address.');
+        return false;
+      }
+      if(pass.length < 8){
+        showAlert('Password should be at least 8 characters for better security.');
+        return false;
+      }
+      if(pass !== conf){
+        showAlert('Password and Confirm Password do not match.');
+        return false;
+      }
+      showAlert('Registration successful (demo). Welcome aboard, ' + name + '!');
+      e.target.reset();
+      return false;
+    }
+
+    function validateFeedback(e){
+      e.preventDefault();
+      const name = document.getElementById('fb-name').value.trim();
+      const email = document.getElementById('fb-email').value.trim();
+      const msg = document.getElementById('fb-message').value.trim();
+      if(!name || !email || !msg){
+        showAlert('Please fill in name, email, and message.');
+        return false;
+      }
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRe.test(email)){
+        showAlert('Please enter a valid email address.');
+        return false;
+      }
+      showAlert('Thank you for your feedback, ' + name + '! We will review it shortly.');
+      e.target.reset();
+      return false;
+    }
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') window.scrollTo({top:0, behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
